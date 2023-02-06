@@ -31,15 +31,15 @@ if ($history) {
 // Check if the form is submitted - if so, check whether the meterstand is valid
 if (isset($_POST["currentMeter"]) && !empty($_POST["currentMeter"])) {
 
-    if ($history && $_POST["currentMeter"] <= $history["meterstand"]) {
-        $updated = false;
-        $message = "Meterstand kan niet lager of gelijk zijn aan vorige inzending";
-    } else if (!is_numeric($_POST["currentMeter"])) {
+    if (!is_numeric($_POST["currentMeter"])) {
         $updated = false;
         $message = "Meterstand moet een getal zijn";
     } else if ($_POST["currentMeter"] > 999999) {
         $updated = false;
         $message = "Meterstand kan niet hoger zijn dan 999999";
+    } else if ($history && $_POST["currentMeter"] <= $history["meterstand"]) {
+        $updated = false;
+        $message = "Meterstand kan niet lager of gelijk zijn aan vorige inzending";
     } else {
         // if all checks are passed, insert the new meterstand
         $updated = true;
