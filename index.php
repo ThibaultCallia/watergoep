@@ -41,6 +41,7 @@ if (isset($updated) && $updated == true) {
     exit();
 }
 
+$pdo = null;
 
 
 ?>

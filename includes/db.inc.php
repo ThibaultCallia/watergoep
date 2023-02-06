@@ -32,13 +32,6 @@ function getCustomer($id)
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-function insertCustomer($data)
-{
-    global $pdo;
-    $stmt = $pdo->prepare("INSERT INTO `watergroep_klanten` (`id`, `naam`, `adres`, `postcode`, `woonplaats`, `telefoon`, `email`, `opmerkingen`, `datum`) VALUES (NULL, :naam, :adres, :postcode, :woonplaats, :telefoon, :email, :opmerkingen, :datum)");
-    $stmt->execute($data);
-}
-
 function getHistory($id)
 {
     global $pdo;
