@@ -1,7 +1,7 @@
 <?php
 $db_host = 'ID396978_watergroep2.db.webhosting.be';
 $db_user = 'ID396978_watergroep2';
-$db_password = 'watergroepPass2099';
+$db_password = '';
 $db_db = 'ID396978_watergroep2';
 $db_port = 3306;
 
